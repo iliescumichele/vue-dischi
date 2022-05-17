@@ -1,19 +1,22 @@
 <template>
   <div class="card mx-2 my-4 d-flex ">
     <div class="img-album my-3">
-        <img src="" alt="">
+        <img :src="dataObject.poster" :alt="dataObject.title">
     </div>
     <div class="info-album text-center">
-        <p class="album-title my-2 ">titolo album</p>
-        <p class="cantante my-1 ">cantante</p>
-        <p class="anno-album">1234</p>
+        <p class="album-title my-2 ">{{dataObject.title}}</p>
+        <p class="cantante my-1 ">{{dataObject.author}}</p>
+        <p class="anno-album">{{dataObject.year}}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'cardComp'
+    name: 'cardComp',
+    props: {
+        dataObject : Object
+    }
 }
 </script>
 
@@ -24,7 +27,6 @@ export default {
         width: calc(100% / 6);
 
         .img-album{
-            background-color: red;
             height: 45%;
             width: calc(100% - 10px);
 

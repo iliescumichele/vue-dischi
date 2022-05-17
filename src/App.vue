@@ -23,16 +23,16 @@ export default {
   data(){
      return{
      baseURL: 'https://flynn.boolean.careers/exercises/api/array/music',
-     array: [],
+     datasMusic: [],
     }
   },
 
   mounted(){
-       axios.get(this.baseURL)
-       .then(response => {
-         this.array = response.data.response;
-         console.log(this.array);
-      })
+     axios.get(this.baseURL)
+     .then(response => {
+       this.datasMusic = response.data.response;
+       console.log(this.datasMusic);
+    })
   }
 
 }

@@ -3,7 +3,12 @@
     <div class="container">
         <div class="cards d-flex row row-cols-5 justify-content-around">
         
-            <cardComp />
+            <cardComp 
+                :key="index"
+                v-for="(data, index) in datasMusic"
+                :dataObject="data"
+
+            />
 
         </div>
     </div>
@@ -11,12 +16,29 @@
 </template>
 
 <script>
+import axios from 'axios'
 import cardComp from "./cardComp.vue"
 
 export default {
     name: 'mainComp',
-    components: { cardComp }
+    components: { cardComp },
+
+    data(){
+        return{
+        baseURL: 'https://flynn.boolean.careers/exercises/api/array/music',
+        datasMusic: [],
+        }
+    },
+
+    mounted(){
+        axios.get(this.baseURL)
+        .then(response => {
+        this.datasMusic = response.data.response;
+        console.log(this.datasMusic);
+        })
+    }
 }
+
 </script>
 
 <style lang="scss" scoped>
