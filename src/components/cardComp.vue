@@ -1,7 +1,7 @@
 <template>
   <div class="card mx-2 my-4 d-flex ">
     <div class="img-album my-3">
-        img
+        <img src="" alt="">
     </div>
     <div class="info-album text-center">
         <p class="album-title my-2 ">titolo album</p>
