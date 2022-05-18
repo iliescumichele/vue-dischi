@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <headerComp />
+    <!-- <headerComp /> -->
     
     <mainComp />
   </div>
@@ -9,14 +9,14 @@
 
 <script>
 import axios from 'axios'
-import headerComp from './components/headerComp.vue'
+// import headerComp from './components/headerComp.vue'
 import mainComp from './components/mainComp.vue'
 
 
 export default {
   name: 'App',
   components: {
-    headerComp,
+    // headerComp,
     mainComp,
   },
 
