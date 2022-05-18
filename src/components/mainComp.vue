@@ -13,7 +13,7 @@
         
             <cardComp 
                 :key="index"
-                v-for="(data, index) in genereMusicToSearch"
+                v-for="(data, index) in filteredMusic"
                 :dataObject="data"
             />
 
@@ -60,6 +60,7 @@ export default {
     computed: {
         filteredMusic(){
             let datasMusicFiltered = [];
+
             if(this.genereMusicToSearch === 'All'){
                 datasMusicFiltered = this.datasMusic;
             }
@@ -94,8 +95,10 @@ export default {
     
 
     main{
-        height: calc(100% - 80px);
-        background-color: #192a39;
+
+        .container{
+            height: calc(100% - 80px);
+        }
 
         .card{
             background-color: #2b3844;
